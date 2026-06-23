@@ -28,15 +28,8 @@ Total Estimated Monthly Cost: $283.74
 
 ## Install
 
-### Go Install
 ```bash
-go install github.com/appfolio/oof@latest
-```
-
-### Homebrew
-```bash
-brew tap appfolio/oof
-brew install oof
+make install
 ```
 
 ### Price Specific Terraform File
@@ -133,7 +126,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-      - run: go install github.com/appfolio/oof@latest
+      - run: go install github.com/danienl1/oof/cmd/oof@latest
       - name: Post cost diff
         run: oof comment ./terraform --repo ${{ github.repository }} --pr ${{ github.event.pull_request.number }}
         env:
