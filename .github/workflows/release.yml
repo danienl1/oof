@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@d60b41a563a30ba29c0c6c4bc259d2cfd7b64af3  # v5.4.0
+        with:
+          go-version: '1.22'
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@9c156ee07a1be2caa97c26bc1dcf49e6f7f2b379  # v6.3.0
+        with:
+          version: v2.8.2
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
