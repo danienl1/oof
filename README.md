@@ -2,7 +2,7 @@
 
 Cloud cost intelligence for AppFolio infrastructure teams
 
-<img width="200" alt="Jimmy O Yang" src="jimmy.jpeg" />
+<img width="2000" alt="Jimmy O Yang" src="jimmy.jpeg" />
 
 ```
   RESOURCE                                TYPE                MONTHLY COST
