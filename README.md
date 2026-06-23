@@ -2,35 +2,7 @@
 
 Cloud cost intelligence for AppFolio infrastructure teams
 
-<img width="2000" alt="Jimmy O Yang" src="jimmy.jpeg" />
-
-```
-  RESOURCE                                TYPE                MONTHLY COST
-  ────────────────────────────────────    ──────────────────  ──────────────
-  aws_lambda_function.traffic_mirror      aws_lambda_function $750.02/mo
-  aws_lambda_function.burp_dast           aws_lambda_function $750.02/mo
-  aws_lambda_function.sf_fetch            aws_lambda_function $600.02/mo
-  aws_vpc_endpoint.interface              aws_vpc_endpoint    $7.30/mo
-  ────────────────────────────────────    ──────────────────  ──────────────
-  (showing 4 of 42 costed resources)
-  TOTAL (us-east-1)                                           $5,972.29/mo
-```
-
-[![Go Version](https://img.shields.io/badge/Go-1.22%2B-blue)](https://golang.org/dl/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://opensource.org/licenses/Apache-2.0)
-
-## Install
-
-### Go Install
-```bash
-go install github.com/appfolio/oof@latest
-```
-
-### Homebrew
-```bash
-brew tap appfolio/oof
-brew install oof
-```
+<img width="1500" alt="Jimmy O Yang" src="jimmy.jpeg" />
 
 ## Usage
 
@@ -47,6 +19,22 @@ $ oof scan ./terraform
 | ALB           | $32.50     | $390       |
 +---------------+------------+------------+
 Total Estimated Monthly Cost: $283.74
+```
+
+[![Go Version](https://img.shields.io/badge/Go-1.22%2B-blue)](https://golang.org/dl/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://opensource.org/licenses/Apache-2.0)
+
+## Install
+
+### Go Install
+```bash
+go install github.com/appfolio/oof@latest
+```
+
+### Homebrew
+```bash
+brew tap appfolio/oof
+brew install oof
 ```
 
 ### Price Specific Terraform File
