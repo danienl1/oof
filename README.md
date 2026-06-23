@@ -2,7 +2,7 @@
 
 Cloud cost intelligence for AppFolio infrastructure teams
 
-<img width="1500" alt="Jimmy O Yang" src="jimmy.jpeg" />
+<img width="500" alt="Jimmy O Yang" src="jimmy.jpeg" />
 
 ## Usage
 
