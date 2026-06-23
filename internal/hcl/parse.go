@@ -9,9 +9,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/appfolio/oof/internal/pricing"
-	"github.com/appfolio/oof/internal/schema"
-	"github.com/appfolio/oof/internal/usage"
+	"github.com/danienl1/oof/internal/pricing"
+	"github.com/danienl1/oof/internal/schema"
+	"github.com/danienl1/oof/internal/usage"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/zclconf/go-cty/cty"

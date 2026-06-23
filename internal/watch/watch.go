@@ -12,8 +12,8 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/appfolio/oof/internal/hcl"
-	"github.com/appfolio/oof/internal/schema"
+	"github.com/danienl1/oof/internal/hcl"
+	"github.com/danienl1/oof/internal/schema"
 	"github.com/fsnotify/fsnotify"
 )
 

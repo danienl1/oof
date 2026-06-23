@@ -1,4 +1,4 @@
-module github.com/appfolio/oof
+module github.com/danienl1/oof
 
 go 1.25
 

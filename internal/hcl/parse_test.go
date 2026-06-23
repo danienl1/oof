@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/appfolio/oof/internal/usage"
+	"github.com/danienl1/oof/internal/usage"
 )
 
 func writeTF(t *testing.T, dir, name, content string) {
