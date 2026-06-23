@@ -116,6 +116,54 @@ make test
 make lint
 ```
 
+## CI Usage
+
+Add a cost diff comment to every pull request:
+
+```yaml
+# .github/workflows/cost.yml
+name: Cost Diff
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  cost:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - run: go install github.com/appfolio/oof@latest
+      - name: Post cost diff
+        run: oof comment ./terraform --repo ${{ github.repository }} --pr ${{ github.event.pull_request.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+This posts a table like:
+
+```
+| Resource | Base | Head | Delta |
+|---|---|---|---|
+| `aws_lambda_function.worker` | $300.02 | $750.02 | +$450.00 ⬆️ |
+
+**Total: $1,200.00/mo → $1,650.00/mo (+$450.00/mo) ⬆️**
+```
+
+To fail the CI check if costs increase beyond a threshold:
+
+```yaml
+- run: oof comment ./terraform --repo ${{ github.repository }} --pr ${{ github.event.pull_request.number }} --fail-on-increase 100
+```
+
 ## Shipping a Release
 
 ```bash
