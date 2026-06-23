@@ -106,16 +106,6 @@ make build
 ./bin/oof scan ./path/to/terraform --top 0   # all
 ```
 
-### Test
-```bash
-make test
-```
-
-### Lint
-```bash
-make lint
-```
-
 ## CI Usage
 
 Add a cost diff comment to every pull request:
