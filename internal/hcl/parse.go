@@ -294,11 +294,11 @@ func mapResource(r *schema.Resource, block *hclsyntax.Block, evalCtx *hcl.EvalCo
 		memMB := attrFloatR("memory_size", 128)
 		timeoutSec := attrFloatR("timeout", 3)
 
-		invocations := 100_000.0
+		invocations := 1_000.0
 		if u.MonthlyRequests > 0 {
 			invocations = u.MonthlyRequests
 		}
-		durationSec := timeoutSec
+		durationSec := timeoutSec * 0.1
 		if u.AverageDuration > 0 {
 			durationSec = u.AverageDuration / 1000
 		}
